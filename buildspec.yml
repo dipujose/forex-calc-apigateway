@@ -1,0 +1,28 @@
+version: 0.2
+
+phases: 
+  install:
+    commands:
+      echo "In install phase"
+    finally:
+      echo "In install phase final block"
+
+  pre_build: 
+    commands:
+      echo "In pre_build phase"
+      test -e index.html
+  
+  build:
+    commands:
+      echo "In build phase"
+      grep 'Gateway' index.html
+  
+  post_build:
+    commands:
+      echo "In post_build phase"
+
+
+artifacts: 
+  files:
+    - index.html
+    - appspec.yml

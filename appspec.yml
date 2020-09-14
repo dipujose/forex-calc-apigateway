@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/www
+
+hooks:
+  AfterInstall:
+    - location: scripts/change-permissions.sh
+  ApplicationStart:
+    - location: scripts/app-restart.sh

@@ -94,6 +94,7 @@
     <br>
     <label for="result">Result:</label>
     <input type="text" id="result" name="output" disabled><br><br>
+    <p id='date_placeholder'><i></i></p>
   </form> 
 
   <script>
@@ -108,7 +109,7 @@
             for (rate in exchange_rate) {
               document.getElementById("result").value = exchange_rate[rate]
             }
-            document.getElementById("result").innerHTML += value_date
+            document.getElementById("date_placeholder").innerHTML += "Value as of" + value_date
                        
     }
   }

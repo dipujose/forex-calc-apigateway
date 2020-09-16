@@ -104,9 +104,11 @@
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
             exchange_rate = response.rates
+            value_date = response.date
             for (rate in exchange_rate) {
               document.getElementById("result").value = exchange_rate[rate]
             }
+            document.getElementById("result").innerHTML += value_date
                        
     }
   }
